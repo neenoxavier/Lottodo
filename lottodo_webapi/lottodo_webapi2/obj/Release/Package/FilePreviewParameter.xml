@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="nxr.host" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Work\\LOTTODO_WEBAPI\\lottodo_webapi2\\lottodo_webapi2\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Work\\LOTTODO_WEBAPI\\lottodo_webapi2\\lottodo_webapi2\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="lottodo_webapi2Context-Web.config Connection String" description="lottodo_webapi2Context Connection String used in web.config by the application to access the database." value="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=lottodo_webapi2Context-20170716182554; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|lottodo_webapi2Context-20170716182554.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Work\\LOTTODO_WEBAPI\\lottodo_webapi2\\lottodo_webapi2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='lottodo_webapi2Context']/@connectionString" />
+  </parameter>
+  <parameter name="Model1Container-Web.config Connection String" description="Model1Container Connection String used in web.config by the application to access the database." value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=root;database=host_nxr&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Work\\LOTTODO_WEBAPI\\lottodo_webapi2\\lottodo_webapi2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Model1Container']/@connectionString" />
+  </parameter>
+</parameters>

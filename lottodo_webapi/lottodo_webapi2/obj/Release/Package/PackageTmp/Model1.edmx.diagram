@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b40eb0f7782412195467e24fb3281b9" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.ltd_tbl_chatgroups" Width="1.5" PointX="8.25" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_fbdetails" Width="1.5" PointX="3" PointY="17.375" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_groupmembers" Width="1.5" PointX="3" PointY="21.25" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_messages" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_plan" Width="1.5" PointX="6" PointY="7.25" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_plansubtypes" Width="1.5" PointX="3.75" PointY="13.375" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_plantypes" Width="1.5" PointX="3.75" PointY="4.875" />
+        <EntityTypeShape EntityType="Model1.ltd_tbl_userdetails" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="Model1.ltd_tbl_ChatGroups_fk0" />
+        <AssociationConnector Association="Model1.ltd_tbl_Messages_fk1" />
+        <AssociationConnector Association="Model1.ltd_tbl_Plan_fk3" />
+        <AssociationConnector Association="Model1.ltd_tbl_FBDetails_fk0" />
+        <AssociationConnector Association="Model1.ltd_tbl_GroupMembers_fk0" />
+        <AssociationConnector Association="Model1.ltd_tbl_Messages_fk0" />
+        <AssociationConnector Association="Model1.ltd_tbl_Plan_fk0" />
+        <AssociationConnector Association="Model1.ltd_tbl_Plan_fk1" />
+        <AssociationConnector Association="Model1.ltd_tbl_Plan_fk2" />
+        <AssociationConnector Association="Model1.ltd_tbl_PlanSubTypes_fk0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

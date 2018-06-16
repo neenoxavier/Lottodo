@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1027321149222",
+    "firebase_url": "https://lottodo-a6000.firebaseio.com",
+    "project_id": "lottodo-a6000",
+    "storage_bucket": "lottodo-a6000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027321149222:android:3857745d0abdb643",
+        "android_client_info": {
+          "package_name": "host.nxr.lottodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027321149222-mloovta2d7436s92s3i04hhfm3kf86n7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "host.nxr.lottodo",
+            "certificate_hash": "30b48c8331fd0eb8babb58a9bb86c42d1d70a648"
+          }
+        },
+        {
+          "client_id": "1027321149222-7sm0ah4vbdvvv0r0jutm4ucvnj4m048c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKuG_uzMrtuCX1HYiAXlVio1WnW9tWZZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027321149222-7sm0ah4vbdvvv0r0jutm4ucvnj4m048c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

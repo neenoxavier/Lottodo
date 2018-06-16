@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Model1" />
+  <Alias Key="Target" Value="Model1.Store" />
+  <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+    <EntitySetMapping Name="ltd_tbl_chatgroups">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_chatgroups">
+        <MappingFragment StoreEntitySet="ltd_tbl_chatgroups">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_GroupSize" ColumnName="ltd_GroupSize" />
+          <ScalarProperty Name="ltd_GroupMaxSize" ColumnName="ltd_GroupMaxSize" />
+          <ScalarProperty Name="ltd_GroupName" ColumnName="ltd_GroupName" />
+          <ScalarProperty Name="ltd_PlanId" ColumnName="ltd_PlanId" />
+          <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_fbdetails">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_fbdetails">
+        <MappingFragment StoreEntitySet="ltd_tbl_fbdetails">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_Gender" ColumnName="ltd_Gender" />
+          <ScalarProperty Name="ltd_Age" ColumnName="ltd_Age" />
+          <ScalarProperty Name="ltd_Place" ColumnName="ltd_Place" />
+          <ScalarProperty Name="ltd_Headline" ColumnName="ltd_Headline" />
+          <ScalarProperty Name="ltd_UserName" ColumnName="ltd_UserName" />
+          <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_groupmembers">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_groupmembers">
+        <MappingFragment StoreEntitySet="ltd_tbl_groupmembers">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_Status" ColumnName="ltd_Status" />
+          <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+          <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_messages">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_messages">
+        <MappingFragment StoreEntitySet="ltd_tbl_messages">
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_SeenDateTime" ColumnName="ltd_SeenDateTime" />
+          <ScalarProperty Name="ltd_RecievedDateTime" ColumnName="ltd_RecievedDateTime" />
+          <ScalarProperty Name="ltd_SendDateTime" ColumnName="ltd_SendDateTime" />
+          <ScalarProperty Name="ltd_Status" ColumnName="ltd_Status" />
+          <ScalarProperty Name="ltd_Message" ColumnName="ltd_Message" />
+          <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+          <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+          <ScalarProperty Name="ltd_MessageId" ColumnName="ltd_MessageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_plan">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_plan">
+        <MappingFragment StoreEntitySet="ltd_tbl_plan">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_PlanChatBoxId" ColumnName="ltd_PlanChatBoxId" />
+          <ScalarProperty Name="ltd_PlanSearchLocation" ColumnName="ltd_PlanSearchLocation" />
+          <ScalarProperty Name="ltd_PlanComments" ColumnName="ltd_PlanComments" />
+          <ScalarProperty Name="ltd_PlanType" ColumnName="ltd_PlanType" />
+          <ScalarProperty Name="ltd_PlanWaitTime" ColumnName="ltd_PlanWaitTime" />
+          <ScalarProperty Name="ltd_PlanRadius" ColumnName="ltd_PlanRadius" />
+          <ScalarProperty Name="ltd_PlanGroupSize" ColumnName="ltd_PlanGroupSize" />
+          <ScalarProperty Name="ltd_PlanGroupMaxSize" ColumnName="ltd_PlanGroupMaxSize" />
+          <ScalarProperty Name="ltd_PlanLocation" ColumnName="ltd_PlanLocation" />
+          <ScalarProperty Name="ltd_PlanDateTime" ColumnName="ltd_PlanDateTime" />
+          <ScalarProperty Name="ltd_PlanSubTypeId" ColumnName="ltd_PlanSubTypeId" />
+          <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+          <ScalarProperty Name="ltd_PlanDescription" ColumnName="ltd_PlanDescription" />
+          <ScalarProperty Name="ltd_PlanName" ColumnName="ltd_PlanName" />
+          <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+          <ScalarProperty Name="ltd_PlanId" ColumnName="ltd_PlanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_plansubtypes">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_plansubtypes">
+        <MappingFragment StoreEntitySet="ltd_tbl_plansubtypes">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+          <ScalarProperty Name="ltd_PlanSubTypeDesc" ColumnName="ltd_PlanSubTypeDesc" />
+          <ScalarProperty Name="ltd_PlanSubTypeName" ColumnName="ltd_PlanSubTypeName" />
+          <ScalarProperty Name="ltd_PlanSubTypeId" ColumnName="ltd_PlanSubTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_plantypes">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_plantypes">
+        <MappingFragment StoreEntitySet="ltd_tbl_plantypes">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_PlanTypeDescription" ColumnName="ltd_PlanTypeDescription" />
+          <ScalarProperty Name="ltd_PlanTypeName" ColumnName="ltd_PlanTypeName" />
+          <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ltd_tbl_userdetails">
+      <EntityTypeMapping TypeName="Model1.ltd_tbl_userdetails">
+        <MappingFragment StoreEntitySet="ltd_tbl_userdetails">
+          <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+          <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+          <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+          <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+          <ScalarProperty Name="ltd_FBConnected" ColumnName="ltd_FBConnected" />
+          <ScalarProperty Name="ltd_Password" ColumnName="ltd_Password" />
+          <ScalarProperty Name="ltd_Email" ColumnName="ltd_Email" />
+          <ScalarProperty Name="ltd_FullName" ColumnName="ltd_FullName" />
+          <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

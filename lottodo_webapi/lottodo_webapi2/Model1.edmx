@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ltd_tbl_chatgroups">
+          <Key>
+            <PropertyRef Name="ltd_GroupId" />
+          </Key>
+          <Property Name="ltd_GroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_PlanId" Type="int" Nullable="false" />
+          <Property Name="ltd_GroupName" Type="varchar" MaxLength="50" />
+          <Property Name="ltd_GroupMaxSize" Type="int" Nullable="false" />
+          <Property Name="ltd_GroupSize" Type="int" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_fbdetails">
+          <Key>
+            <PropertyRef Name="ltd_UserId" />
+          </Key>
+          <Property Name="ltd_UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_UserName" Type="varchar" MaxLength="50" />
+          <Property Name="ltd_Headline" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_Place" Type="varchar" MaxLength="50" />
+          <Property Name="ltd_Age" Type="int" />
+          <Property Name="ltd_Gender" Type="char" MaxLength="1" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_groupmembers">
+          <Key>
+            <PropertyRef Name="ltd_GroupId" />
+          </Key>
+          <Property Name="ltd_GroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_Status" Type="char" MaxLength="1" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_messages">
+          <Key>
+            <PropertyRef Name="ltd_MessageId" />
+          </Key>
+          <Property Name="ltd_MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_GroupId" Type="int" Nullable="false" />
+          <Property Name="ltd_Message" Type="varchar" MaxLength="5000" Nullable="false" />
+          <Property Name="ltd_Status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ltd_SendDateTime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_RecievedDateTime" Type="datetime" Precision="0" />
+          <Property Name="ltd_SeenDateTime" Type="datetime" Precision="0" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plan">
+          <Key>
+            <PropertyRef Name="ltd_PlanId" />
+          </Key>
+          <Property Name="ltd_PlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_PlanName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ltd_PlanDescription" Type="varchar" MaxLength="1000" />
+          <Property Name="ltd_PlanTypeId" Type="int" Nullable="false" />
+          <Property Name="ltd_PlanSubTypeId" Type="int" Nullable="false" />
+          <Property Name="ltd_PlanDateTime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_PlanLocation" Type="varchar" MaxLength="50" />
+          <Property Name="ltd_PlanGroupMaxSize" Type="int" Nullable="false" />
+          <Property Name="ltd_PlanGroupSize" Type="int" />
+          <Property Name="ltd_PlanRadius" Type="int" />
+          <Property Name="ltd_PlanWaitTime" Type="int" />
+          <Property Name="ltd_PlanType" Type="varchar" MaxLength="50" />
+          <Property Name="ltd_PlanComments" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_PlanSearchLocation" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_PlanChatBoxId" Type="int" Nullable="false" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plansubtypes">
+          <Key>
+            <PropertyRef Name="ltd_PlanSubTypeId" />
+          </Key>
+          <Property Name="ltd_PlanSubTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_PlanSubTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_PlanSubTypeDesc" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_PlanTypeId" Type="int" Nullable="false" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plantypes">
+          <Key>
+            <PropertyRef Name="ltd_PlanTypeId" />
+          </Key>
+          <Property Name="ltd_PlanTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ltd_PlanTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_PlanTypeDescription" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_userdetails">
+          <Key>
+            <PropertyRef Name="ltd_UserId" />
+          </Key>
+          <Property Name="ltd_UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_FullName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ltd_Email" Type="varchar" MaxLength="100" />
+          <Property Name="ltd_Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ltd_FBConnected" Type="bool" Nullable="false" />
+          <Property Name="ltd_Active" Type="bool" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="varchar" MaxLength="200" />
+          <Property Name="ltd_CreatedDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <Association Name="ltd_tbl_ChatGroups_fk0">
+          <End Role="ltd_tbl_plan" Type="Self.ltd_tbl_plan" Multiplicity="1" />
+          <End Role="ltd_tbl_chatgroups" Type="Self.ltd_tbl_chatgroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_PlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_FBDetails_fk0">
+          <End Role="ltd_tbl_userdetails" Type="Self.ltd_tbl_userdetails" Multiplicity="1" />
+          <End Role="ltd_tbl_fbdetails" Type="Self.ltd_tbl_fbdetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_fbdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_GroupMembers_fk0">
+          <End Role="ltd_tbl_userdetails" Type="Self.ltd_tbl_userdetails" Multiplicity="1" />
+          <End Role="ltd_tbl_groupmembers" Type="Self.ltd_tbl_groupmembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_groupmembers">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Messages_fk0">
+          <End Role="ltd_tbl_userdetails" Type="Self.ltd_tbl_userdetails" Multiplicity="1" />
+          <End Role="ltd_tbl_messages" Type="Self.ltd_tbl_messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_messages">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Messages_fk1">
+          <End Role="ltd_tbl_chatgroups" Type="Self.ltd_tbl_chatgroups" Multiplicity="1" />
+          <End Role="ltd_tbl_messages" Type="Self.ltd_tbl_messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_GroupId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_messages">
+              <PropertyRef Name="ltd_GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk0">
+          <End Role="ltd_tbl_userdetails" Type="Self.ltd_tbl_userdetails" Multiplicity="1" />
+          <End Role="ltd_tbl_plan" Type="Self.ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk1">
+          <End Role="ltd_tbl_plantypes" Type="Self.ltd_tbl_plantypes" Multiplicity="1" />
+          <End Role="ltd_tbl_plan" Type="Self.ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plantypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk2">
+          <End Role="ltd_tbl_plansubtypes" Type="Self.ltd_tbl_plansubtypes" Multiplicity="1" />
+          <End Role="ltd_tbl_plan" Type="Self.ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plansubtypes">
+              <PropertyRef Name="ltd_PlanSubTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanSubTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk3">
+          <End Role="ltd_tbl_chatgroups" Type="Self.ltd_tbl_chatgroups" Multiplicity="1" />
+          <End Role="ltd_tbl_plan" Type="Self.ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_GroupId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanChatBoxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_PlanSubTypes_fk0">
+          <End Role="ltd_tbl_plantypes" Type="Self.ltd_tbl_plantypes" Multiplicity="1" />
+          <End Role="ltd_tbl_plansubtypes" Type="Self.ltd_tbl_plansubtypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plantypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plansubtypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="ltd_tbl_chatgroups" EntityType="Self.ltd_tbl_chatgroups" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_fbdetails" EntityType="Self.ltd_tbl_fbdetails" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_groupmembers" EntityType="Self.ltd_tbl_groupmembers" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_messages" EntityType="Self.ltd_tbl_messages" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_plan" EntityType="Self.ltd_tbl_plan" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_plansubtypes" EntityType="Self.ltd_tbl_plansubtypes" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_plantypes" EntityType="Self.ltd_tbl_plantypes" Schema="host_nxr" store:Type="Tables" />
+          <EntitySet Name="ltd_tbl_userdetails" EntityType="Self.ltd_tbl_userdetails" Schema="host_nxr" store:Type="Tables" />
+          <AssociationSet Name="ltd_tbl_ChatGroups_fk0" Association="Self.ltd_tbl_ChatGroups_fk0">
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_FBDetails_fk0" Association="Self.ltd_tbl_FBDetails_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_fbdetails" EntitySet="ltd_tbl_fbdetails" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_GroupMembers_fk0" Association="Self.ltd_tbl_GroupMembers_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_groupmembers" EntitySet="ltd_tbl_groupmembers" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Messages_fk0" Association="Self.ltd_tbl_Messages_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_messages" EntitySet="ltd_tbl_messages" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Messages_fk1" Association="Self.ltd_tbl_Messages_fk1">
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+            <End Role="ltd_tbl_messages" EntitySet="ltd_tbl_messages" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk0" Association="Self.ltd_tbl_Plan_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk1" Association="Self.ltd_tbl_Plan_fk1">
+            <End Role="ltd_tbl_plantypes" EntitySet="ltd_tbl_plantypes" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk2" Association="Self.ltd_tbl_Plan_fk2">
+            <End Role="ltd_tbl_plansubtypes" EntitySet="ltd_tbl_plansubtypes" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk3" Association="Self.ltd_tbl_Plan_fk3">
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_PlanSubTypes_fk0" Association="Self.ltd_tbl_PlanSubTypes_fk0">
+            <End Role="ltd_tbl_plantypes" EntitySet="ltd_tbl_plantypes" />
+            <End Role="ltd_tbl_plansubtypes" EntitySet="ltd_tbl_plansubtypes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ltd_tbl_chatgroups" EntityType="Model1.ltd_tbl_chatgroups" />
+          <EntitySet Name="ltd_tbl_fbdetails" EntityType="Model1.ltd_tbl_fbdetails" />
+          <EntitySet Name="ltd_tbl_groupmembers" EntityType="Model1.ltd_tbl_groupmembers" />
+          <EntitySet Name="ltd_tbl_messages" EntityType="Model1.ltd_tbl_messages" />
+          <EntitySet Name="ltd_tbl_plan" EntityType="Model1.ltd_tbl_plan" />
+          <EntitySet Name="ltd_tbl_plansubtypes" EntityType="Model1.ltd_tbl_plansubtypes" />
+          <EntitySet Name="ltd_tbl_plantypes" EntityType="Model1.ltd_tbl_plantypes" />
+          <EntitySet Name="ltd_tbl_userdetails" EntityType="Model1.ltd_tbl_userdetails" />
+          <AssociationSet Name="ltd_tbl_ChatGroups_fk0" Association="Model1.ltd_tbl_ChatGroups_fk0">
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Messages_fk1" Association="Model1.ltd_tbl_Messages_fk1">
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+            <End Role="ltd_tbl_messages" EntitySet="ltd_tbl_messages" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk3" Association="Model1.ltd_tbl_Plan_fk3">
+            <End Role="ltd_tbl_chatgroups" EntitySet="ltd_tbl_chatgroups" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_FBDetails_fk0" Association="Model1.ltd_tbl_FBDetails_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_fbdetails" EntitySet="ltd_tbl_fbdetails" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_GroupMembers_fk0" Association="Model1.ltd_tbl_GroupMembers_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_groupmembers" EntitySet="ltd_tbl_groupmembers" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Messages_fk0" Association="Model1.ltd_tbl_Messages_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_messages" EntitySet="ltd_tbl_messages" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk0" Association="Model1.ltd_tbl_Plan_fk0">
+            <End Role="ltd_tbl_userdetails" EntitySet="ltd_tbl_userdetails" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk1" Association="Model1.ltd_tbl_Plan_fk1">
+            <End Role="ltd_tbl_plantypes" EntitySet="ltd_tbl_plantypes" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_Plan_fk2" Association="Model1.ltd_tbl_Plan_fk2">
+            <End Role="ltd_tbl_plansubtypes" EntitySet="ltd_tbl_plansubtypes" />
+            <End Role="ltd_tbl_plan" EntitySet="ltd_tbl_plan" />
+          </AssociationSet>
+          <AssociationSet Name="ltd_tbl_PlanSubTypes_fk0" Association="Model1.ltd_tbl_PlanSubTypes_fk0">
+            <End Role="ltd_tbl_plantypes" EntitySet="ltd_tbl_plantypes" />
+            <End Role="ltd_tbl_plansubtypes" EntitySet="ltd_tbl_plansubtypes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ltd_tbl_chatgroups">
+          <Key>
+            <PropertyRef Name="ltd_GroupId" />
+          </Key>
+          <Property Name="ltd_GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_PlanId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_GroupMaxSize" Type="Int32" Nullable="false" />
+          <Property Name="ltd_GroupSize" Type="Int32" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_plan" Relationship="Model1.ltd_tbl_ChatGroups_fk0" FromRole="ltd_tbl_chatgroups" ToRole="ltd_tbl_plan" />
+          <NavigationProperty Name="ltd_tbl_messages" Relationship="Model1.ltd_tbl_Messages_fk1" FromRole="ltd_tbl_chatgroups" ToRole="ltd_tbl_messages" />
+          <NavigationProperty Name="ltd_tbl_plan1" Relationship="Model1.ltd_tbl_Plan_fk3" FromRole="ltd_tbl_chatgroups" ToRole="ltd_tbl_plan" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_fbdetails">
+          <Key>
+            <PropertyRef Name="ltd_UserId" />
+          </Key>
+          <Property Name="ltd_UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Headline" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Age" Type="Int32" />
+          <Property Name="ltd_Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" />
+          <NavigationProperty Name="ltd_tbl_userdetails" Relationship="Model1.ltd_tbl_FBDetails_fk0" FromRole="ltd_tbl_fbdetails" ToRole="ltd_tbl_userdetails" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_groupmembers">
+          <Key>
+            <PropertyRef Name="ltd_GroupId" />
+          </Key>
+          <Property Name="ltd_GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_userdetails" Relationship="Model1.ltd_tbl_GroupMembers_fk0" FromRole="ltd_tbl_groupmembers" ToRole="ltd_tbl_userdetails" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_messages">
+          <Key>
+            <PropertyRef Name="ltd_MessageId" />
+          </Key>
+          <Property Name="ltd_MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_GroupId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_Message" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Status" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_SendDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_RecievedDateTime" Type="DateTime" />
+          <Property Name="ltd_SeenDateTime" Type="DateTime" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ltd_tbl_chatgroups" Relationship="Model1.ltd_tbl_Messages_fk1" FromRole="ltd_tbl_messages" ToRole="ltd_tbl_chatgroups" />
+          <NavigationProperty Name="ltd_tbl_userdetails" Relationship="Model1.ltd_tbl_Messages_fk0" FromRole="ltd_tbl_messages" ToRole="ltd_tbl_userdetails" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plan">
+          <Key>
+            <PropertyRef Name="ltd_PlanId" />
+          </Key>
+          <Property Name="ltd_PlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_PlanSubTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_PlanDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_PlanLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanGroupMaxSize" Type="Int32" Nullable="false" />
+          <Property Name="ltd_PlanGroupSize" Type="Int32" />
+          <Property Name="ltd_PlanRadius" Type="Int32" />
+          <Property Name="ltd_PlanWaitTime" Type="Int32" />
+          <Property Name="ltd_PlanType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanComments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanSearchLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanChatBoxId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_chatgroups" Relationship="Model1.ltd_tbl_ChatGroups_fk0" FromRole="ltd_tbl_plan" ToRole="ltd_tbl_chatgroups" />
+          <NavigationProperty Name="ltd_tbl_chatgroups1" Relationship="Model1.ltd_tbl_Plan_fk3" FromRole="ltd_tbl_plan" ToRole="ltd_tbl_chatgroups" />
+          <NavigationProperty Name="ltd_tbl_userdetails" Relationship="Model1.ltd_tbl_Plan_fk0" FromRole="ltd_tbl_plan" ToRole="ltd_tbl_userdetails" />
+          <NavigationProperty Name="ltd_tbl_plantypes" Relationship="Model1.ltd_tbl_Plan_fk1" FromRole="ltd_tbl_plan" ToRole="ltd_tbl_plantypes" />
+          <NavigationProperty Name="ltd_tbl_plansubtypes" Relationship="Model1.ltd_tbl_Plan_fk2" FromRole="ltd_tbl_plan" ToRole="ltd_tbl_plansubtypes" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plansubtypes">
+          <Key>
+            <PropertyRef Name="ltd_PlanSubTypeId" />
+          </Key>
+          <Property Name="ltd_PlanSubTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_PlanSubTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanSubTypeDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_plan" Relationship="Model1.ltd_tbl_Plan_fk2" FromRole="ltd_tbl_plansubtypes" ToRole="ltd_tbl_plan" />
+          <NavigationProperty Name="ltd_tbl_plantypes" Relationship="Model1.ltd_tbl_PlanSubTypes_fk0" FromRole="ltd_tbl_plansubtypes" ToRole="ltd_tbl_plantypes" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_plantypes">
+          <Key>
+            <PropertyRef Name="ltd_PlanTypeId" />
+          </Key>
+          <Property Name="ltd_PlanTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ltd_PlanTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_PlanTypeDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_plan" Relationship="Model1.ltd_tbl_Plan_fk1" FromRole="ltd_tbl_plantypes" ToRole="ltd_tbl_plan" />
+          <NavigationProperty Name="ltd_tbl_plansubtypes" Relationship="Model1.ltd_tbl_PlanSubTypes_fk0" FromRole="ltd_tbl_plantypes" ToRole="ltd_tbl_plansubtypes" />
+        </EntityType>
+        <EntityType Name="ltd_tbl_userdetails">
+          <Key>
+            <PropertyRef Name="ltd_UserId" />
+          </Key>
+          <Property Name="ltd_UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_FBConnected" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_Active" Type="Boolean" Nullable="false" />
+          <Property Name="ltd_AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ltd_CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ltd_ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ltd_tbl_fbdetails" Relationship="Model1.ltd_tbl_FBDetails_fk0" FromRole="ltd_tbl_userdetails" ToRole="ltd_tbl_fbdetails" />
+          <NavigationProperty Name="ltd_tbl_groupmembers" Relationship="Model1.ltd_tbl_GroupMembers_fk0" FromRole="ltd_tbl_userdetails" ToRole="ltd_tbl_groupmembers" />
+          <NavigationProperty Name="ltd_tbl_messages" Relationship="Model1.ltd_tbl_Messages_fk0" FromRole="ltd_tbl_userdetails" ToRole="ltd_tbl_messages" />
+          <NavigationProperty Name="ltd_tbl_plan" Relationship="Model1.ltd_tbl_Plan_fk0" FromRole="ltd_tbl_userdetails" ToRole="ltd_tbl_plan" />
+        </EntityType>
+        <Association Name="ltd_tbl_ChatGroups_fk0">
+          <End Type="Model1.ltd_tbl_plan" Role="ltd_tbl_plan" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_chatgroups" Role="ltd_tbl_chatgroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_PlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Messages_fk1">
+          <End Type="Model1.ltd_tbl_chatgroups" Role="ltd_tbl_chatgroups" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_messages" Role="ltd_tbl_messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_GroupId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_messages">
+              <PropertyRef Name="ltd_GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk3">
+          <End Type="Model1.ltd_tbl_chatgroups" Role="ltd_tbl_chatgroups" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_plan" Role="ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_chatgroups">
+              <PropertyRef Name="ltd_GroupId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanChatBoxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_FBDetails_fk0">
+          <End Type="Model1.ltd_tbl_userdetails" Role="ltd_tbl_userdetails" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_fbdetails" Role="ltd_tbl_fbdetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_fbdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_GroupMembers_fk0">
+          <End Type="Model1.ltd_tbl_userdetails" Role="ltd_tbl_userdetails" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_groupmembers" Role="ltd_tbl_groupmembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_groupmembers">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Messages_fk0">
+          <End Type="Model1.ltd_tbl_userdetails" Role="ltd_tbl_userdetails" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_messages" Role="ltd_tbl_messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_messages">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk0">
+          <End Type="Model1.ltd_tbl_userdetails" Role="ltd_tbl_userdetails" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_plan" Role="ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_userdetails">
+              <PropertyRef Name="ltd_UserId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk1">
+          <End Type="Model1.ltd_tbl_plantypes" Role="ltd_tbl_plantypes" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_plan" Role="ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plantypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_Plan_fk2">
+          <End Type="Model1.ltd_tbl_plansubtypes" Role="ltd_tbl_plansubtypes" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_plan" Role="ltd_tbl_plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plansubtypes">
+              <PropertyRef Name="ltd_PlanSubTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plan">
+              <PropertyRef Name="ltd_PlanSubTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ltd_tbl_PlanSubTypes_fk0">
+          <End Type="Model1.ltd_tbl_plantypes" Role="ltd_tbl_plantypes" Multiplicity="1" />
+          <End Type="Model1.ltd_tbl_plansubtypes" Role="ltd_tbl_plansubtypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltd_tbl_plantypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Principal>
+            <Dependent Role="ltd_tbl_plansubtypes">
+              <PropertyRef Name="ltd_PlanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+          <EntitySetMapping Name="ltd_tbl_chatgroups">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_chatgroups">
+              <MappingFragment StoreEntitySet="ltd_tbl_chatgroups">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_GroupSize" ColumnName="ltd_GroupSize" />
+                <ScalarProperty Name="ltd_GroupMaxSize" ColumnName="ltd_GroupMaxSize" />
+                <ScalarProperty Name="ltd_GroupName" ColumnName="ltd_GroupName" />
+                <ScalarProperty Name="ltd_PlanId" ColumnName="ltd_PlanId" />
+                <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_fbdetails">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_fbdetails">
+              <MappingFragment StoreEntitySet="ltd_tbl_fbdetails">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_Gender" ColumnName="ltd_Gender" />
+                <ScalarProperty Name="ltd_Age" ColumnName="ltd_Age" />
+                <ScalarProperty Name="ltd_Place" ColumnName="ltd_Place" />
+                <ScalarProperty Name="ltd_Headline" ColumnName="ltd_Headline" />
+                <ScalarProperty Name="ltd_UserName" ColumnName="ltd_UserName" />
+                <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_groupmembers">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_groupmembers">
+              <MappingFragment StoreEntitySet="ltd_tbl_groupmembers">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_Status" ColumnName="ltd_Status" />
+                <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+                <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_messages">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_messages">
+              <MappingFragment StoreEntitySet="ltd_tbl_messages">
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_SeenDateTime" ColumnName="ltd_SeenDateTime" />
+                <ScalarProperty Name="ltd_RecievedDateTime" ColumnName="ltd_RecievedDateTime" />
+                <ScalarProperty Name="ltd_SendDateTime" ColumnName="ltd_SendDateTime" />
+                <ScalarProperty Name="ltd_Status" ColumnName="ltd_Status" />
+                <ScalarProperty Name="ltd_Message" ColumnName="ltd_Message" />
+                <ScalarProperty Name="ltd_GroupId" ColumnName="ltd_GroupId" />
+                <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+                <ScalarProperty Name="ltd_MessageId" ColumnName="ltd_MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_plan">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_plan">
+              <MappingFragment StoreEntitySet="ltd_tbl_plan">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_PlanChatBoxId" ColumnName="ltd_PlanChatBoxId" />
+                <ScalarProperty Name="ltd_PlanSearchLocation" ColumnName="ltd_PlanSearchLocation" />
+                <ScalarProperty Name="ltd_PlanComments" ColumnName="ltd_PlanComments" />
+                <ScalarProperty Name="ltd_PlanType" ColumnName="ltd_PlanType" />
+                <ScalarProperty Name="ltd_PlanWaitTime" ColumnName="ltd_PlanWaitTime" />
+                <ScalarProperty Name="ltd_PlanRadius" ColumnName="ltd_PlanRadius" />
+                <ScalarProperty Name="ltd_PlanGroupSize" ColumnName="ltd_PlanGroupSize" />
+                <ScalarProperty Name="ltd_PlanGroupMaxSize" ColumnName="ltd_PlanGroupMaxSize" />
+                <ScalarProperty Name="ltd_PlanLocation" ColumnName="ltd_PlanLocation" />
+                <ScalarProperty Name="ltd_PlanDateTime" ColumnName="ltd_PlanDateTime" />
+                <ScalarProperty Name="ltd_PlanSubTypeId" ColumnName="ltd_PlanSubTypeId" />
+                <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+                <ScalarProperty Name="ltd_PlanDescription" ColumnName="ltd_PlanDescription" />
+                <ScalarProperty Name="ltd_PlanName" ColumnName="ltd_PlanName" />
+                <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+                <ScalarProperty Name="ltd_PlanId" ColumnName="ltd_PlanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_plansubtypes">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_plansubtypes">
+              <MappingFragment StoreEntitySet="ltd_tbl_plansubtypes">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+                <ScalarProperty Name="ltd_PlanSubTypeDesc" ColumnName="ltd_PlanSubTypeDesc" />
+                <ScalarProperty Name="ltd_PlanSubTypeName" ColumnName="ltd_PlanSubTypeName" />
+                <ScalarProperty Name="ltd_PlanSubTypeId" ColumnName="ltd_PlanSubTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_plantypes">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_plantypes">
+              <MappingFragment StoreEntitySet="ltd_tbl_plantypes">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_PlanTypeDescription" ColumnName="ltd_PlanTypeDescription" />
+                <ScalarProperty Name="ltd_PlanTypeName" ColumnName="ltd_PlanTypeName" />
+                <ScalarProperty Name="ltd_PlanTypeId" ColumnName="ltd_PlanTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltd_tbl_userdetails">
+            <EntityTypeMapping TypeName="Model1.ltd_tbl_userdetails">
+              <MappingFragment StoreEntitySet="ltd_tbl_userdetails">
+                <ScalarProperty Name="ltd_ModifiedDate" ColumnName="ltd_ModifiedDate" />
+                <ScalarProperty Name="ltd_CreatedDate" ColumnName="ltd_CreatedDate" />
+                <ScalarProperty Name="ltd_AddInfo" ColumnName="ltd_AddInfo" />
+                <ScalarProperty Name="ltd_Active" ColumnName="ltd_Active" />
+                <ScalarProperty Name="ltd_FBConnected" ColumnName="ltd_FBConnected" />
+                <ScalarProperty Name="ltd_Password" ColumnName="ltd_Password" />
+                <ScalarProperty Name="ltd_Email" ColumnName="ltd_Email" />
+                <ScalarProperty Name="ltd_FullName" ColumnName="ltd_FullName" />
+                <ScalarProperty Name="ltd_UserId" ColumnName="ltd_UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
